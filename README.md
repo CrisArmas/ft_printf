@@ -1,2 +1,2 @@
 # ft_printf
-ft_ptinf project
+ft_printf project
