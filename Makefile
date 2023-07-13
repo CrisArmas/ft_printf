@@ -1,18 +1,18 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    MAKEFILE                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: carmas <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/30 15:27:18 by carmas            #+#    #+#              #
-#    Updated: 2023/07/11 15:46:49 by carmas           ###   ########.fr        #
+#    Updated: 2023/07/11 17:58:37 by carmas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-SRCS = ft_printf.c ft_printf_utlis.c
+SRC = ft_printf.c ft_printf_utils.c
 
 OBJT = $(SRC:.c=.o)
 
@@ -20,7 +20,7 @@ CFLAGS = -Wall -Werror -Wextra
 
 all: $(NAME)
 
-$(NAME)
+$(NAME):
 	gcc -c $(CFLAGS) $(SRC)
 	ar rcs $(NAME) $(OBJT)
 
@@ -32,4 +32,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fcclean re
+.PHONY: all clean fclean re

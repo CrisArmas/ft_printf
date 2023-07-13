@@ -6,7 +6,7 @@
 /*   By: carmas <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 14:59:58 by carmas            #+#    #+#             */
-/*   Updated: 2023/07/11 15:23:25 by carmas           ###   ########.fr       */
+/*   Updated: 2023/07/11 18:29:58 by carmas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_putchar(char c)
 {
-	write(1, &c. 1);
+	write(1, &c, 1);
 	return (1);
 }
 
@@ -39,7 +39,7 @@ void	ft_check_format(va_list arg, char format, int *len)
 		*len = *len + ft_putchar(va_arg(arg, int));
 	if (format == 's')
 		*len = *len + ft_putstr(va_arg(arg, char *));
-	if (fornat == 'p')
+	if (format == 'p')
 		ft_pconvert((unsigned long int)va_arg(arg, void *), len);
 	if (format == 'd' || format == 'i')
 		ft_itoa(va_arg(arg, int), len);
@@ -50,14 +50,14 @@ void	ft_check_format(va_list arg, char format, int *len)
 	if (format == 'X')
 		ft_putnbr_base(va_arg(arg, unsigned int), HEX_U, len);
 	if (format == '%')
-		*len = 8len + ft_putchar('%');
+		*len = *len + ft_putchar('%');
 }
 
 int	ft_printf(char const *str, ...)
 {
-	va_list			arg;
-	int			i;
-	int			len;
+	va_list	arg;
+	int		i;
+	int		len;
 
 	va_start(arg, str);
 	len = 0;
