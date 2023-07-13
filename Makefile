@@ -6,13 +6,13 @@
 #    By: carmas <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/30 15:27:18 by carmas            #+#    #+#              #
-#    Updated: 2023/07/11 17:58:37 by carmas           ###   ########.fr        #
+#    Updated: 2023/07/13 14:38:45 by carmas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-SRC = ft_printf.c ft_printf_utils.c
+SRC = main.c ft_printf.c ft_printf_utils.c
 
 OBJT = $(SRC:.c=.o)
 

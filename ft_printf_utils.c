@@ -6,14 +6,19 @@
 /*   By: carmas <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 18:14:20 by carmas            #+#    #+#             */
-/*   Updated: 2023/07/11 18:25:16 by carmas           ###   ########.fr       */
+/*   Updated: 2023/07/13 15:02:03 by carmas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_convert(unsigned long int nbr, int *len)
+void	ft_pconvert(unsigned long int nbr, int *len)
 {
+	if (!nbr)
+	{
+		*len = *len + ft_putstr("(nil)");
+		return ;
+	}
 	*len = *len + ft_putchar('0') + ft_putchar('x');
 	ft_putnbr_base(nbr, HEX_L, len);
 }
